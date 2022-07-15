@@ -14,7 +14,9 @@
     --main-color: #f75023;
     --big-font: 4rem;
     --h2-font: 3rem;
-    --p-font: 1.5rem;
+    --p-font: 1rem;
+    --mid-font:17px;
+    --btn-color: rgb(85, 201, 172);
 }
 body{
     background: var(--bg-color);
@@ -113,7 +115,7 @@ section{
 }
 .home_text h5{
     margin-bottom: 23px;
-    font-size: 19px;    
+    font-size: var(--p-font);    
     font-weight: 500;
    
 }
@@ -135,9 +137,9 @@ span{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #4f57c2;
+    background: var(--btn-color);
     color: var(--bg-color);
-    font-size: 17px;
+    font-size: var(--mid-font);
     margin-right: 22px;
     margin-bottom: 30px;
 }
@@ -191,8 +193,7 @@ header.sticky{
     margin-bottom: 20px;
 }
 .sub_box h3{
-    font-size: var(--p-font);
-    font-size: 24px;
+    font-size: var(--mid-font);
     font-weight: 500;
 }
 .sub_box p{
@@ -464,4 +465,88 @@ header.sticky{
     text-align: center;
     padding: 30px;
     font-size: 17px;
+}
+
+/* responsive design */
+
+@media (max-width:1425px){
+    header{
+        padding: 16px 3%;
+        transition: .3s;
+    }
+    header.sticky{
+        padding: 10px 3%;
+        transition: .3s;
+    }
+    .contact{
+        width: 95%;
+        transition: .3s;
+    }
+    section{
+        padding: 70px 3%;
+        transition: .3s;
+    }
+    :root{
+        --big-font:3rem;
+        --h2-font:2.3rem;
+        --p-font:1rem;
+        transition: .3s;
+    }
+
+   
+}
+@media (max-width:920px){
+    #menu-icon{
+        display: block;
+    }
+    .home{
+        min-height: 80vh;
+    }
+    .navlist{
+        position: absolute;
+        top: -600px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--main-color);
+        text-align: left;
+        transition:  .3s;
+    }
+    .navlist a{
+        padding: 1rem;
+        display: block;
+        margin: 1.5rem;
+        border-right: 2px solid var(--bg-color);
+        color: var(--bg-color);
+    }
+    .navlist a:hover{
+        background: var(--bg-color);
+        transition: all .3s;
+        color: var(--main-color);
+    }
+    .navlist a::after{
+        display: none;
+    }
+    .navlist.active {
+        top: 100%;
+    }
+    
+}
+@media (max-width:800px){
+    .home{
+        grid-template-columns: 1fr;
+        min-height: 130vh;
+        gap: 1rem;
+    }
+    .home_text{
+        padding-top: 55px;
+    }
+    .home_image{
+        text-align: center;
+    }
+    .home_image img{
+        width: 440px;
+        margin: auto;
+    }
+    
 }
